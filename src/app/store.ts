@@ -2,14 +2,14 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import { homeReducer } from "../pages/home";
 import { dashboardReducer } from "../pages/dashboard";
-import { signInReducer } from "../pages/sign-in";
+import { userReducer } from "../entities/models/user";
 
 import { baseApi } from "../shared/api/baseApi";
 
 const appStore = configureStore({
   reducer: {
     home: homeReducer,
-    signIn: signInReducer,
+    user: userReducer,
     dashboard: dashboardReducer,
     [baseApi.reducerPath]: baseApi.reducer,
   },

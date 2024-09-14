@@ -10,11 +10,16 @@ import store from "./app/store";
 import { Router } from "./app/router";
 import "./index.css";
 
-import { mockRoutes } from "./shared/api/mockRestApi.ts";
+import { mockRoutes, mockUser } from "./shared/api/mockRestApi.ts";
 
 createServer({
   routes() {
-    this.get(mockRoutes.login.path, () => mockRoutes.login.mockData);
+    this.get(mockRoutes.login.path, () => {
+      return [mockUser];
+    });
+    this.post(mockRoutes.register.path, (_, request) => {
+      return JSON.parse(request.requestBody);
+    });
   },
 });
 

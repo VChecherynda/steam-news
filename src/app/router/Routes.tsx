@@ -1,4 +1,4 @@
-import { Home, SignIn, Dashboard } from "../../pages";
+import { Home, SignIn, SignUp, Dashboard } from "../../pages";
 
 import {
   createBrowserRouter,
@@ -16,6 +16,7 @@ const Router = createBrowserRouter(
         <Route path='dashboard' element={<Dashboard />} />
       </Route>
       <Route path='sign-in' element={<SignIn />} />
+      <Route path='sign-up' element={<SignUp />} />
       <Route path='*' element={<h1>Page not found</h1>} />
     </Route>
   )

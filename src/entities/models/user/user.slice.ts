@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { User } from "../../shared/models";
+import { User } from "../../../shared/models";
 
 const initialState: {
   user: User | null;
@@ -7,7 +7,7 @@ const initialState: {
   user: null,
 };
 
-export const signInSlice = createSlice({
+export const userSlice = createSlice({
   name: "signIn",
   initialState,
   reducers: {
@@ -17,6 +17,6 @@ export const signInSlice = createSlice({
   },
 });
 
-export const { addUser } = signInSlice.actions;
+export const { addUser } = userSlice.actions;
 
-export const signInReducer = signInSlice.reducer;
+export const userReducer = userSlice.reducer;

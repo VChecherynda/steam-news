@@ -24,7 +24,11 @@ const signInApi = baseApi.injectEndpoints({
           if (user) {
             return user;
           }
+
+          throw new Error("User doesnt exist");
         }
+
+        throw new Error("Password incorect");
       },
     }),
   }),

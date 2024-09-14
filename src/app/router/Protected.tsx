@@ -3,7 +3,7 @@ import appStore from "../store";
 import { Navigate, Outlet } from "react-router-dom";
 
 export const Protected = () => {
-  const { user } = appStore.getState().signIn;
+  const { user } = appStore.getState().user;
 
-  return user?.token ? <Outlet /> : <Navigate to='/sign-in' />;
+  return user?.email ? <Outlet /> : <Navigate to='/sign-in' />;
 };
