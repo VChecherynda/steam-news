@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Header, Layout, Sidebar } from "../../shared/ui";
 
 export function Dashboard() {
   return (
-    <>
-      <Link to='/'>Home</Link>
-      <div>Dashboard</div>
-    </>
+    <Layout header={<Header />} sidebar={<Sidebar />}>
+      <>
+        <div>Dashboard</div>
+      </>
+    </Layout>
   );
 }

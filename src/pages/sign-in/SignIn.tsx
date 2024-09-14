@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useLazyQuery } from "./SignIn.api";
 import { addUser } from "./SignIn.slice";
 import { useDispatch } from "react-redux";
+import { Layout, Header } from "../../shared/ui";
+import { Input, Button } from "@material-tailwind/react";
 
 export function SignIn() {
   const [trigger] = useLazyQuery();
@@ -27,38 +29,44 @@ export function SignIn() {
   };
 
   return (
-    <>
-      <form>
-        <label htmlFor='email'>
-          Email
-          <input
+    <Layout header={<Header />}>
+      <div className='flex flex-col items-center justify-center'>
+        <form className='w-1/4 flex flex-col items-end gap-6 mb-6'>
+          <Input
+            label='Email'
             name='email'
-            type='text'
             value={state.email}
-            onChange={(e) =>
+            placeholder='Enter email'
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              const { value } = e.target;
+
               setState((prev) => ({
                 ...prev,
-                email: e.target.value,
-              }))
-            }
+                email: value as string,
+              }));
+            }}
           />
-        </label>
-        <label htmlFor='password'>
-          Password
-          <input
+          <Input
+            label='Password'
             name='password'
-            type='text'
             value={state.password}
-            onChange={(e) =>
+            placeholder='Enter password'
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              const { value } = e.target;
+
               setState((prev) => ({
                 ...prev,
-                password: e.target.value,
-              }))
-            }
+                email: value as string,
+              }));
+            }}
           />
-        </label>
-      </form>
-      <button onClick={onSubmitHandler}>Sing In</button>
-    </>
+        </form>
+        <div className='w-1/4'>
+          <Button placeholder='Sign In' onClick={onSubmitHandler}>
+            Sing In
+          </Button>
+        </div>
+      </div>
+    </Layout>
   );
 }
