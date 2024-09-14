@@ -1,11 +1,9 @@
-// interface DashboardProps {
-//   children: JSX.Element;
-// }
+import { Link } from "react-router-dom";
 
 export function Dashboard() {
   return (
     <>
-      <a href={`/`}>Home</a>
+      <Link to='/'>Home</Link>
       <div>Dashboard</div>
     </>
   );
