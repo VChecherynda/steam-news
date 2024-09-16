@@ -1,7 +1,7 @@
-import { User } from "../../shared/models";
+import { User } from "../../entities/models/user";
 import { baseApi } from "../../shared/api/baseApi";
 import { USER_TAG } from "../../shared/api/tags";
-import { LOGIN_PATH } from "../../shared/config";
+import { API_REST_API, LOGIN_PATH } from "../../shared/config";
 
 interface LoginArguments {
   email: string;
@@ -13,7 +13,7 @@ const signInApi = baseApi.injectEndpoints({
     login: build.query<User | undefined, LoginArguments>({
       providesTags: [USER_TAG],
       query: () => ({
-        url: LOGIN_PATH,
+        url: `http:/${API_REST_API}${LOGIN_PATH}`,
       }),
       transformResponse: (data: User[], _, arg) => {
         const { email, password } = arg;

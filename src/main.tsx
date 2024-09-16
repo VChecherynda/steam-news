@@ -11,13 +11,16 @@ import { Router } from "./app/router";
 import "./index.css";
 
 import { mockRoutes, mockUser } from "./shared/api/mockRestApi.ts";
+import { STEAM_WEB_API } from "./shared/config/backend.ts";
 
 createServer({
   routes() {
-    this.get(mockRoutes.login.path, () => {
+    this.passthrough(`https://${STEAM_WEB_API}/**`);
+
+    this.get(`http:/${mockRoutes.login.path}`, () => {
       return [mockUser];
     });
-    this.post(mockRoutes.register.path, (_, request) => {
+    this.post(`http:/${mockRoutes.register.path}`, (_, request) => {
       return JSON.parse(request.requestBody);
     });
   },

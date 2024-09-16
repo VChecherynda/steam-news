@@ -1,7 +1,7 @@
-import { User } from "../../shared/models";
+import { User } from "../../entities/models/user";
 import { baseApi } from "../../shared/api/baseApi";
 import { USER_TAG } from "../../shared/api/tags";
-import { REGISTER_PATH } from "../../shared/config";
+import { API_REST_API, REGISTER_PATH } from "../../shared/config";
 
 interface RegisterArguments {
   email: string;
@@ -13,7 +13,7 @@ const signUpApi = baseApi.injectEndpoints({
     register: build.mutation<User | undefined, RegisterArguments>({
       invalidatesTags: [USER_TAG],
       query: (payload) => ({
-        url: REGISTER_PATH,
+        url: `http:/${API_REST_API}${REGISTER_PATH}`,
         method: "POST",
         body: payload,
       }),

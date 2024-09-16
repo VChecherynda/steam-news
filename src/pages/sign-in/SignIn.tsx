@@ -14,7 +14,7 @@ export function SignIn() {
   const [error, setError] = useState("");
   const [state, setState] = useState({
     email: "john@test.com",
-    password: "12345",
+    password: "123456",
   });
 
   const onSignInHandler = async () => {

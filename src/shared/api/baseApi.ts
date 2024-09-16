@@ -1,10 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { USER_TAG, DASHBOARD_TAG, HOME_TAG } from "./tags";
-import { API_REST_API } from "../config";
+import { USER_TAG, NEWS_TAG, HOME_TAG } from "./tags";
 
 export const baseApi = createApi({
-  tagTypes: [USER_TAG, DASHBOARD_TAG, HOME_TAG],
+  tagTypes: [USER_TAG, NEWS_TAG, HOME_TAG],
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: API_REST_API }),
+  baseQuery: fetchBaseQuery(),
   endpoints: () => ({}),
 });

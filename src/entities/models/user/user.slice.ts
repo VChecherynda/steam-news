@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { User } from "../../../shared/models";
+import { User } from "./model";
 
 const initialState: {
   user: User | null;
@@ -8,7 +8,7 @@ const initialState: {
 };
 
 export const userSlice = createSlice({
-  name: "signIn",
+  name: "user",
   initialState,
   reducers: {
     addUser: (state, action: { type: string; payload: User }) => {
