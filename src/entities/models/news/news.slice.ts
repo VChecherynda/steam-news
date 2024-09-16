@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { News } from "./model";
+import { News } from "./type";
 
 const initialState: {
   news: News | null;

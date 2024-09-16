@@ -5,14 +5,16 @@ import {
   addActivePage,
   addEndPage,
   addStartPage,
-} from "../model/pagination.slice";
-import { activePage, startPage, endPage } from "../model/pagination.selector";
+} from "../../../entities/pagination/pagination.slice";
+import {
+  activePage,
+  startPage,
+} from "../../../entities/pagination/pagination.selector";
 
 export function Pagination() {
   const dispatch = useDispatch();
   const active = useSelector(activePage);
   const prevPage = useSelector(startPage);
-  const nextPage = useSelector(endPage);
 
   return (
     <div className='flex items-center gap-4'>

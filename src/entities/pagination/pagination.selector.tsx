@@ -1,4 +1,4 @@
-import { RootState } from "../../../app/store";
+import { RootState } from "../../app/store";
 
 const activePage = (state: RootState) => state.pagination.active;
 const startPage = (state: RootState) => state.pagination.start;

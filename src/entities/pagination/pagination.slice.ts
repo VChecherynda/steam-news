@@ -23,6 +23,8 @@ export const paginationSlice = createSlice({
       state.end = state.end - 1;
     },
     addEndPage: (state) => {
+      debugger;
+
       state.active = state.end;
 
       state.start = state.start + 1;

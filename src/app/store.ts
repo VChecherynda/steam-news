@@ -5,7 +5,7 @@ import { newsReducer } from "../entities/models/news";
 import { userReducer } from "../entities/models/user";
 
 import { baseApi } from "../shared/api/baseApi";
-import { paginationReducer } from "../widget/pagination/model/pagination.slice";
+import { paginationReducer } from "../entities/pagination/pagination.slice";
 
 const appStore = configureStore({
   reducer: {

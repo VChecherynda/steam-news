@@ -1,2 +1,2 @@
 export { addUser, userReducer } from "./user.slice";
-export type { User } from "./model";
+export type { User } from "./type";

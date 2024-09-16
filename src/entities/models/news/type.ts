@@ -1,4 +1,4 @@
-export type Aticle = {
+export type Article = {
   gid: string;
   title: string;
   url: string;
@@ -15,6 +15,6 @@ export type Aticle = {
 export type News = {
   appnews: {
     appid: number;
-    newsitems: Aticle[];
+    newsitems: Article[];
   };
 };
